@@ -6,7 +6,7 @@ int main()
     int n, m;
     cout<<"enter the size of an array 1 and array 2 ";
     cin>>n>>m;
-    int arr1[n],arr2[m];
+    int arr1[n],arr2[m],arr[100],k=0;
 
     cout<<"enter the elements of an array 1"<<endl;
     for(int i=0;i<n;i++)
@@ -23,10 +23,22 @@ int main()
         {
             if(arr1[i]==arr2[j])
             {
-                cout<<arr1[i]<<" ";
-                break;
+                int a;
+                for(a=0;a<k;a++)
+                {
+                    if(arr[a]==arr1[i])
+                        break;
+                }
+                if(a==k)
+                {
+                    arr[k++]=arr1[i];
+                }
             }
         }
+    }
+    for(int i=0;i<k;i++)
+    {
+        cout<<arr[i]<<" ";
     }
     cout<<"]"<<endl;
     return 0;
